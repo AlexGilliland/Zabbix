@@ -22,12 +22,13 @@ Steps
 			**Target list:** Set this to your Zabbix host  		
 			**Type:** Custom script  
 			**Execute On:** Zabbix server  
-			**Commands:** /usr/lib/zabbix/alertscripts/Enter-MaintenanceMode.bat {HOST.NAME} 
+			**Commands:** /usr/lib/zabbix/alertscripts/Enter-MaintenanceMode.bat {HOST.NAME}  
+			
 	**Recovery Operations:**  
 		**Operation Type:** Remote Command  
 		**Target list:** Zabbix host  
 		**Type:** Custom Script  
-		**Execute On:** Zabbix Server
+		**Execute On:** Zabbix Server  
 		**Commands:** /usr/lib/zabbix/alertscripts/Exit-MaintenanceMode.bat {HOST.NAME}
 			
 			
