@@ -13,13 +13,23 @@ Steps
 4. Create and place the two scripts from [here](https://github.com/AlexGilliland/Zabbix/blob/main/Enter-MaintenanceMode.bat) to /usr/lib/zabbix/alertscripts/ (or where ever you store your Zabbix scripts, but if you do, you'll need to update the basedir within the script) and update the custom variables section within the .bat file to match your environment. This includes the groupid from step 1
 5. Create a new Zabbix action within **Configuration>Actions**
 	**Name:** Enter Maintenance Mode
+	
 	**Conditions:** A) Trigger name containers *Maintenance Mode* B) Trigger name containers *Enter Maintenance Mode*
+	
 	**Operations Tab**
-	**Operations:**
-			**Target list:** Set this to your Zabbix host
-			**Type:** Custom script
-			**Execute On:** Zabbix server
-			**Commands:** /usr/lib/zabbix/alertscripts/Enter-MaintenanceMode.bat {HOST.NAME}
+	
+	**Operations:**  
+			**Target list:** Set this to your Zabbix host  		
+			**Type:** Custom script  
+			**Execute On:** Zabbix server  
+			**Commands:** /usr/lib/zabbix/alertscripts/Enter-MaintenanceMode.bat {HOST.NAME} 
+	**Recovery Operations:**  
+		**Operation Type:** Remote Command  
+		**Target list:** Zabbix host  
+		**Type:** Custom Script  
+		**Execute On:** Zabbix Server
+		**Commands:** /usr/lib/zabbix/alertscripts/Exit-MaintenanceMode.bat {HOST.NAME}
+			
 			
 6. Create a new Group Policy and apply to the OUs you want and set the Computer Configuration > Policies > Windows Settings > Scripts, Shutdown (Enter-MaintenanceMode.ps1) and Startup (Exit-MaintenanceMode.ps1)
 
