@@ -8,7 +8,7 @@ zabbixUsername=""
 zabbixPassword=""
 #zabbixApiUrl="zabbix/api_jsonrpc.php"
 zabbixApiUrl="/api_jsonrpc.php"
-zabbixMaintHostGroupId="34"
+zabbixMaintHostGroupId=""
 baseDir="/usr/lib/zabbix/alertscripts"
 #End of custom variables
 #***********************************************************************
