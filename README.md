@@ -1,4 +1,6 @@
-**This is provided as-is and no warranty.**
+**This is provided as-is and no warranty.**  
+
+
 ***Workflow***
 
 On graceful shutdown/reboot -> Script uses zabbix_sender to send item to Zabbix -> Zabbix triggers based on the received item and an action places the server into "Maintenance Mode" group.
