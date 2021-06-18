@@ -1,0 +1,13 @@
+[Unit]
+Description=Enter and exit maintenance mode for Zabbix
+After=network-online.target
+Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/bash -c "python /etc/zabbix/exit-maint-mode.py" startup
+ExecStop=/usr/bin/bash -c "python /etc/zabbix/enter-maint-mode.py" shutdown
+
+[Install]
+WantedBy=multi-user.target
