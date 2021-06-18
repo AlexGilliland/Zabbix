@@ -1,5 +1,5 @@
 **This is provided as-is and no warranty.**  
-
+This has been tested on Zabbix 4.4, 5.0 and 5.0.2
 
 ***Workflow***
 
@@ -12,7 +12,7 @@ Steps
 2. Create the new item with the key 'maintenance.mode' within the template of your choosing
 	**Note:** I opted to use Template Module Zabbix Agent
 3. Create a trigger with the **Problem Expression** set to ``{Template Module Zabbix agent:maintenance.mode.regexp("^Entering Maintenance Mode",1)}=1`` and **Recovery Expression** set to ``{Template Module Zabbix agent:maintenance.mode.count(15m,"Exiting Maintenance Mode")}>=1 and {Template Module Zabbix agent:maintenance.mode.count(#2, "Entering Maintenance Mode")}=1``
-4. Create and place the two scripts from [here](https://github.com/AlexGilliland/Zabbix/blob/main/alertscripts/Enter-MaintenanceMode.bat) to /usr/lib/zabbix/alertscripts/ (or where ever you store your Zabbix scripts, but if you do, you'll need to update the basedir within the script) and update the custom variables section within the .bat file to match your environment. This includes the groupid from step 1
+4. Copy the files from [here](https://github.com/AlexGilliland/Zabbix/blob/main/alertscripts) to /usr/lib/zabbix/alertscripts/ (or where ever you store your Zabbix scripts, but if you do, you'll need to update the basedir within the script) and update the custom variables section within the .bat file to match your environment. This includes the groupid from step 1
 5. Create a new Zabbix action within **Configuration>Actions**
 	**Name:** Enter Maintenance Mode
 	
