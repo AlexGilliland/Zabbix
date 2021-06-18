@@ -1,0 +1,13 @@
+{
+    "jsonrpc": "2.0",
+    "method": "host.get",
+    "params": {
+        "filter": {
+            "host": [
+                "HOSTTOADD"
+            ]
+        }
+    },
+    "auth": AUTHID,
+    "id": 1
+}

@@ -1,0 +1,18 @@
+{
+    "jsonrpc": "2.0",
+    "method": "hostgroup.massadd",
+    "params": {
+        "groups": [
+            {
+                "groupid": "MAINTGROUPID"
+            }
+        ],
+        "hosts": [
+            {
+                "hostid": "MAINTHOSTID"
+            }
+        ]
+    },
+    "auth": AUTHID,
+    "id": 1
+}

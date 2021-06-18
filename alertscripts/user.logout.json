@@ -1,0 +1,7 @@
+{
+  "jsonrpc": "2.0",
+  "method": "user.logout",
+  "params": [],
+  "auth": AUTHID,
+  "id": 6
+}
